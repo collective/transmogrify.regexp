@@ -10,7 +10,11 @@ class ApplyRegex(object):
 
     def __init__(self, transmogrifier, name, options, previous):
         self.previous = previous
-        self.key = options['key']
+        if 'key' in options:
+            self.key = options['key']
+        else:
+            raise SyntaxError, "Must specify key"
+
         self.target = options['target']
         self.regexp = options['regexp']
         self.format = options['format']
