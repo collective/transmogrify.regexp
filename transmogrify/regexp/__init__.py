@@ -30,18 +30,18 @@ class ApplyRegex(object):
     def __iter__(self):
         for item in self.previous:
             if self.key in item:
-                item[self.key] = self.apply_regex(item[self.key])
+                item = self.apply_regex(item, self.key)
             yield item
 
-    def apply_regex(self, _path):
+    def apply_regex(self, item, key):
         expr = re.compile(self.regexp)
-        result = expr.search(_path)
+        result = expr.search(item[key])
         if result:
             groups = result.groups()
             if groups is not None:
                 if self.order is not None:
-                    _path = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
+                    item['_path'] = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
                 else:
                     raise SyntaxError, "Must specify order"
 
-        return _path
+        return item
