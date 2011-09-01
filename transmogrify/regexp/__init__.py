@@ -14,12 +14,12 @@ class ApplyRegex(object):
             self.key = options['key']
         else:
             raise SyntaxError, "Must specify key"
-        if 'regexp' in options:
-            self.regexp = options['regexp']
+        if 'expression' in options:
+            self.regexp = options['expression']
         else:
             raise SyntaxError, "Must specify regexp"
-        if 'strfmt' in options:
-            self.strfmt = options['strfmt'].replace('%%', '%')  # XXX Better way to unescape?
+        if 'format' in options:
+            self.strfmt = options['format'].replace('%%', '%')  # XXX Better way to unescape?
         else:
             raise SyntaxError, "Must specify strfmt"
         if 'order' in options:
