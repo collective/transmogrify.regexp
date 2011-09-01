@@ -19,38 +19,29 @@ class ApplyRegex(object):
         else:
             raise SyntaxError, "Must specify regexp"
         if 'strfmt' in options:
-            self.regexp = options['strfmt']
+            self.strfmt = options['strfmt'].replace('%%', '%')  # XXX Better way to unescape?
         else:
             raise SyntaxError, "Must specify strfmt"
         if 'order' in options:
             self.order = options['order']
+        else:
+            self.order = None
 
     def __iter__(self):
         for item in self.previous:
-
-#            if self.key in item:
-#                item[key] = self.apply_regex(
-
+            if self.key in item:
+                item[self.key] = self.apply_regex(item[self.key])
             yield item
 
-    def slugify(self, _path):
-        """
-        If a _path like this is discovered:
-
-            /path/to/content/2000/01/01/foo/index.html
-
-        Change _path to:
-
-            /path/to/content/foo-20000101.html
-        """
-#        expr = re.compile('(.*)(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html')
-        expr = re.compile('(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html')
+    def apply_regex(self, _path):
+        expr = re.compile(self.regexp)
         result = expr.search(_path)
         if result:
             groups = result.groups()
-#            _path = '%s/%s-%s%s%s.html' % (groups[0], groups[4], groups[1],
-#                groups[2], groups[3])
-            _path = '%s-%s%s%s.html' % (groups[3], groups[0],
-                groups[1], groups[2])
-        return _path
+            if groups is not None:
+                if self.order is not None:
+                    _path = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
+                else:
+                    raise SyntaxError, "Must specify order"
 
+        return _path
