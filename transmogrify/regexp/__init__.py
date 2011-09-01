@@ -18,8 +18,8 @@ class Slugify(object):
     def __iter__(self):
         for item in self.previous:
 
-            if self.key in item:
-                item[key] = self.apply_regex(
+#            if self.key in item:
+#                item[key] = self.apply_regex(
 
             yield item
 
