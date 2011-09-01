@@ -6,6 +6,6 @@ setup(
     namespace_packages=['transmogrify'],
     packages=find_packages(),
     entry_points={
-        'z3c.autoinclude.plugin': 'target = plone',
+        'z3c.autoinclude.plugin': 'target = transmogrify',
     }
 )
