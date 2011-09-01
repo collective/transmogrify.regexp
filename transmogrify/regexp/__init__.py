@@ -31,6 +31,7 @@ class ApplyRegex(object):
         for item in self.previous:
             if self.key in item:
                 item = self.apply_regex(item, self.key)
+            
             yield item
 
     def apply_regex(self, item, key):
@@ -41,6 +42,7 @@ class ApplyRegex(object):
             if groups is not None:
                 if self.order is not None:
                     item['_path'] = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
+                    item['_regexp_applied'] = True
                 else:
                     raise SyntaxError, "Must specify order"
 
