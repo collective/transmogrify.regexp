@@ -4,7 +4,7 @@ from collective.transmogrifier.interfaces import ISectionBlueprint, ISection
 from zope.interface import classProvides, implements
 
 
-class Slugify(object):
+class ApplyRegex(object):
     classProvides(ISectionBlueprint)
     implements(ISection)
 
