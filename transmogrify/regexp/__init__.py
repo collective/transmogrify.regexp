@@ -14,10 +14,16 @@ class ApplyRegex(object):
             self.key = options['key']
         else:
             raise SyntaxError, "Must specify key"
-
-        self.target = options['target']
-        self.regexp = options['regexp']
-        self.format = options['format']
+        if 'regexp' in options:
+            self.regexp = options['regexp']
+        else:
+            raise SyntaxError, "Must specify regexp"
+        if 'strfmt' in options:
+            self.regexp = options['strfmt']
+        else:
+            raise SyntaxError, "Must specify strfmt"
+        if 'order' in options:
+            self.order = options['order']
 
     def __iter__(self):
         for item in self.previous:
