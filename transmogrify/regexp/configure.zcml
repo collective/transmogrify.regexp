@@ -1,0 +1,13 @@
+
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="transmogrify.slugify">
+
+    <include package="collective.transmogrifier" />
+
+    <utility
+        component=".ApplyRegex"
+        name="transmogrify.regexp"
+        />
+
+</configure>
