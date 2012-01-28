@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    description='Modify key values by applying a regular expression'
+    description='Modify key values by applying a regular expression',
     entry_points={
         'z3c.autoinclude.plugin': 'target = transmogrify',
     },
