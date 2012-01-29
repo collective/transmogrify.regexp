@@ -6,6 +6,7 @@ setup(
     entry_points={
         'z3c.autoinclude.plugin': 'target = transmogrify',
     },
+    include_package_data=True,
     long_description=open('README.rst').read(),
     name='transmogrify.regexp',
     namespace_packages=['transmogrify'],
