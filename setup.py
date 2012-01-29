@@ -11,5 +11,5 @@ setup(
     namespace_packages=['transmogrify'],
     packages=find_packages(),
     url='https://github.com/aclark4life/transmogrify.regexp',
-    version='0.3.0',
+    version='0.4.0',
 )
