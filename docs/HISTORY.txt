@@ -2,6 +2,17 @@
 Changelog
 =========
 
+
+0.5.1 (unreleased)
+------------------
+
+* Added information about contributors of this package.
+  [macagua]
+
+* Updated documentation about use this package.
+  [macagua]
+
+
 0.5.0 (2012-01-29)
 ------------------
 
