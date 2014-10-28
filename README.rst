@@ -73,18 +73,18 @@ value is ``/blog/2014/09/22/plone/index.html`` by this new value
 
 The options are explains are following: ::
 
-  * The ``key`` option defines the ``_path`` key which must be applied
-    the regular expression defined in the ``expression`` option.
+* The ``key`` option defines the ``_path`` key which must be applied
+  the regular expression defined in the ``expression`` option.
 
-  * The ``expression`` option defined the criteria to search like this
-    ``/(.*)/(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html``.
+* The ``expression`` option defined the criteria to search like this
+  ``/(.*)/(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html``.
 
-  * The ``format`` option defines the string format which must be applied
-     the replacement like this ``%%s/%%s-%%s%%s%%s.html``.
+* The ``format`` option defines the string format which must be applied
+  the replacement like this ``%%s/%%s-%%s%%s%%s.html``.
 
-  * The ``order`` option defines the desired order of the groups ``()``
-    regular expressions defined like this `` 0,4,1,2,3`` to match the
-    string format of ``format`` option.
+* The ``order`` option defines the desired order of the groups ``()``
+  regular expressions defined like this `` 0,4,1,2,3`` to match the
+  string format of ``format`` option.
 
 See also
 --------
