@@ -69,7 +69,7 @@ Then a sample usage in your pipelines: ::
 
 This example requires changing the order of a string, whose initial
 value is ``/blog/2014/09/22/plone/index.html`` by this new value
-``/blog/plone/2014/09/22/index.html``.
+``/blog/plone-20140922.html``.
 
 The options are explains are following:
 
