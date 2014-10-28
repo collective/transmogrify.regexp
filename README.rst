@@ -60,18 +60,18 @@ Example
 
 Then a sample usage in your pipelines: ::
 
-    [apply_regexp]
-    blueprint = transmogrify.regexp
-    key = _path
-    expression = /(.*)/(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html
-    format = %%s/%%s-%%s%%s%%s.html
-    order = 0,4,1,2,3
+  [apply_regexp]
+  blueprint = transmogrify.regexp
+  key = _path
+  expression = /(.*)/(\d\d\d\d)/(\d\d)/(\d\d)/(.+)/index.html
+  format = %%s/%%s-%%s%%s%%s.html
+  order = 0,4,1,2,3
 
 This example requires changing the order of a string, whose initial
 value is ``/blog/2014/09/22/plone/index.html`` by this new value
 ``/blog/plone/2014/09/22/index.html``.
 
-The options are explains are following: ::
+The options are explains are following:
 
 * The ``key`` option defines the ``_path`` key which must be applied
   the regular expression defined in the ``expression`` option.
@@ -89,13 +89,13 @@ The options are explains are following: ::
 See also
 --------
 
-- `Regular expression operations with Python 2.7.8 <https://docs.python.org/2/library/re.html>`_.
+* `Regular expression operations with Python 2.7.8 <https://docs.python.org/2/library/re.html>`_.
 
-- `RegExr: Learn, Build, & Test RegEx <http://www.regexr.com/>`_.
+* `RegExr: Learn, Build, & Test RegEx <http://www.regexr.com/>`_.
 
 Contribute
 ==========
 
-- Issue Tracker: http://github.com/collective/transmogrify.regexp/issues
-- Source Code: http://github.com/collective/transmogrify.regexp
-- Documentation: https://github.com/collective/transmogrify.regexp/blob/master/README.rst
+* Issue Tracker: http://github.com/collective/transmogrify.regexp/issues
+* Source Code: http://github.com/collective/transmogrify.regexp
+* Documentation: https://github.com/collective/transmogrify.regexp/blob/master/README.rst
