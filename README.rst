@@ -36,7 +36,7 @@ transmogrify.regexp
 
 This blueprint let you modify key values by applying a regular expression.
 
-Options:
+The options are:
 
 :key:
   Defines which key must be apply the regular expression defined in the
@@ -83,7 +83,7 @@ The options are explains are following:
   the replacement like this ``%%s/%%s-%%s%%s%%s.html``.
 
 * The ``order`` option defines the desired order of the groups ``()``
-  regular expressions defined like this `` 0,4,1,2,3`` to match the
+  regular expressions defined like this ``0,4,1,2,3`` to match the
   string format of ``format`` option.
 
 See also
@@ -97,5 +97,7 @@ Contribute
 ==========
 
 * Issue Tracker: http://github.com/collective/transmogrify.regexp/issues
+
 * Source Code: http://github.com/collective/transmogrify.regexp
+
 * Documentation: https://github.com/collective/transmogrify.regexp/blob/master/README.rst
