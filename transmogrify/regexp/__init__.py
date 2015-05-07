@@ -41,7 +41,7 @@ class ApplyRegex(object):
             groups = result.groups()
             if groups is not None:
                 if self.order is not None:
-                    item['_path'] = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
+                    item[key] = self.strfmt % tuple([groups[int(i)] for i in self.order.split(',')])
                     item['_regexp_applied'] = True
                 else:
                     raise SyntaxError, "Must specify order"
